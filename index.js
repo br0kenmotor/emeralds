@@ -14,8 +14,8 @@ function merge() {
 function spread() {
     let stx = document.getElementById("e").value/(64*64*64);
     let le = (stx - (Math.floor(stx))) * 64;
-    let eb = (le - (Math.floor(le))) * 64 * 64;
-    let eme = (eb - (Math.floor(eb))) * 64 * 64 * 64;
+    let eb = (le - (Math.floor(le))) * 64;
+    let eme = (eb - (Math.floor(eb))) * 64;
     document.getElementById("stx").value = Math.floor(stx);
     document.getElementById("le").value = Math.floor(le);
     document.getElementById("eb").value = Math.floor(eb);
@@ -23,11 +23,11 @@ function spread() {
 }
 
 function tax() {
-    document.getElementById("e").value = Math.floor(document.getElementById("e").value * TAX);
+    document.getElementById("e").value = Math.round(document.getElementById("e").value * TAX);
     spread();
 }
 
 function detax() {
-    document.getElementById("e").value = Math.floor(document.getElementById("e").value / TAX);
+    document.getElementById("e").value = Math.round(document.getElementById("e").value / TAX);
     spread();
 }
